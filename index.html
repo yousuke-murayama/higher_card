@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h2>HIGHER CARD</h2>
+    <div>
+      <button class="finishedBtn notDisplay">ゲームを終了する</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="titleDisplay">
+      <h1 class="gameTitle">HIGHER CARD</h1>
+  
+      <div class="btnContainer">
+        <button class="gameStartBtn">GAME START</button>
+      </div>
+    </div>
+  
+    <div class="startDisplay notDisplay">
+      <h1 class="gameStart">GAME START!!</h1>
+      <h2 class="judge"></h2>
+  
+      <div class="versusDisplay">
+  
+        <div class="enemyField">
+          <h2 class="enemy">相手のカード</h2>
+          <div class="enemyCard">
+            <span class="enemyCard__text"></span>
+          </div>
+        </div>
+  
+        <div class="playerField">
+          <div class="playerCard">
+            <span class="playerCard__text"></span>
+          </div>
+          <h2 class="player">あなたのカード</h2>
+        </div>
+        
+      </div>
+      
+      <div class="openBtnContainer">
+        <button class="openBtn">OPEN CARD!!</button>
+      </div>
+
+      <div class="betBtnContainer">
+        <button class="betPlusBtn">+</button>
+        <div class="betMoney">BET!! 0$</div>
+        <button class="betMinusBtn">-</button>
+      </div>
+
+      <div>
+        <h3 class="playerMoney">所持金:1000$</h3>
+      </div>
+      
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>

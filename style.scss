@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: relative;
+  background-color: rgb(234, 223, 210);
+  padding: 10px;
+
+  & h2 {
+    color: rgb(70, 103, 92);
+  }
+
+  div {
+    position: absolute;
+    text-align: right;
+    top: 0;
+    right: 0;
+  }
+
+  & .finishedBtn {
+    padding: 16px 30px;
+    background-color: white;
+    transition: all 0.4s;
+    
+    &:hover {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.gameTitle {
+  text-align: center;
+  color: aquamarine;
+  margin-top: 100px;
+  font-size: 50px;
+}
+
+.btnContainer {
+  text-align: center;
+}
+
+.gameStartBtn {
+  margin-top: 100px;
+  padding: 20px 50px;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  transition: all 0.3s;
+
+  &:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+  }
+}
+
+.notDisplay {
+  display: none;
+}
+
+.judge {
+  text-align: center;
+}
+
+.gameStart {
+  text-align: center;
+  color: aquamarine;
+  margin-top: 20px;
+  font-size: 40px;
+  opacity: 0;
+  &.animate {
+    animation: SlideIn 1.8s;
+  }
+}
+
+.versusDisplay {
+  display: flex;
+  justify-content: space-around;
+}
+
+.enemyField {
+  text-align: center;
+}
+
+.enemyCard {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  background-color: white;
+  border: 2px solid black;
+  display: inline-block;
+  overflow: hidden;
+  
+  &__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s;
+  }
+
+  &.opened {
+    &::before {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.playerField {
+  text-align: center;
+}
+
+.player {
+  color: red;
+}
+
+.playerCard {
+  @extend .enemyCard;
+  margin-top: 36px;
+
+  &__text {
+    @extend .enemyCard__text;
+    color: red;
+  }
+
+  &.opened {
+    &::before {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.openBtnContainer {
+  text-align: center;
+}
+
+.openBtn {
+  @extend .gameStartBtn;
+  margin-top: 20px;
+}
+
+.betBtnContainer {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+
+  & .betPlusBtn {
+    padding: 10px 20px;
+    background-color: white;
+    font-size: 20px;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  & .betMinusBtn {
+    @extend .betPlusBtn;
+  }
+
+  & .betMoney {
+    font-size: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+.playerMoney {
+    text-align: center;
+}
+
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-65px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(65px);
+  }
+}
